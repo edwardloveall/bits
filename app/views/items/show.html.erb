@@ -1,20 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @item.title %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= link_to @item.url, @item.url %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @item.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="item">
+  <div class="item-header">
+    <h2><%= link_to @item.title, @item.url, html_options = { target: '_blank' } %></h2>
+    <div class="url"><%= link_to @item.url, @item.url, html_options = { target: '_blank' } %></div>
+  </div> <!-- .item-header -->
+  <p class="description"><%= @item.description %></p>
+  <div class="meta">
+    <%= link_to 'Edit', edit_item_path(@item), class: 'edit' %>
+    <%= link_to 'Delete', @item, class: 'delete', confirm: 'Are you sure?', method: :delete %>
+  </div>
+</div>

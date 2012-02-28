@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Links</title>
+  <title>Bits</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= auto_discovery_link_tag(:rss, feed_url) %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="mainWrap">
+    <%= yield %>
+  </div><!-- #mainWrap -->
 </body>
 </html>

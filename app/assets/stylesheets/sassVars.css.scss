@@ -1,0 +1,41 @@
+$textColor: #000;
+
+$small: 10px;
+
+@mixin roundedCorners($radius: 1em) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin button($topColor: #eeeeee) {
+  $bottomColor: darken($topColor, 10%);
+  $topColorActive: darken($topColor, 13%);
+  $bottomColorActive: darken($topColor, 3%);
+  
+  display: inline-block;
+  padding: .2em 1.1em;
+  color: #000 !important;
+  text-align: center;
+  background-image: $topColor;
+  background-image: -moz-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, $topColor), color-stop(100%, $bottomColor));
+  background-image: -webkit-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  background-image: -o-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  background-image: -ms-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+  background: linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  border: 1px solid #888;
+  @include roundedCorners(1em);
+  
+  &:active {
+    background-image: $topColorActive;
+    background-image: -moz-linear-gradient(top, $topColorActive 50%, $bottomColorActive 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, $topColorActive), color-stop(100%, $bottomColorActive));
+    background-image: -webkit-linear-gradient(top, $topColorActive 50%, $bottomColorActive 100%);
+    background-image: -o-linear-gradient(top, $topColorActive 50%, $bottomColorActive 100%);
+    background-image: -ms-linear-gradient(top, $topColorActive 50%, $bottomColorActive 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+    background: linear-gradient(top, $topColorActive 50%, $bottomColorActive 100%);
+  }
+}

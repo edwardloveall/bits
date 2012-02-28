@@ -1,30 +1,23 @@
-<h1>Listing items</h1>
+<h1>Bits <span id="newItem"><%= link_to 'New Item', new_item_path, id: 'newItem' %></span></h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<div id="items">
 <% @items.each do |item| %>
-  <tr>
-    <td><%= item.title %></td>
-    <td><%= item.description %></td>
-    <td><%= item.url %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="item">
+    <div class="item-header">
+      <h2><%= link_to item.title, item.url, html_options = { target: '_blank' } %>
+          <span class="permalink"><%= link_to '[permalink]', item %></span></h2>
+      <div class="url"><%= link_to item.url, item.url, html_options = { target: '_blank' } %></div>
+    </div> <!-- .item-header -->
+    <p class="description"><%= item.description %></p>
+    <div class="meta">
+      <%= link_to 'Edit', edit_item_path(item), class: 'edit' %>
+      <%= link_to 'Delete', item, class: 'delete', confirm: 'Are you sure?', method: :delete %>
+    </div>
+  </div>
+  <!-- <hr /> -->
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Item', new_item_path %>
+</div> <!-- #items -->
 
 <div id="bookmarklet">
   Drag this to your Bookmarks Bar: <%= link_to 'Post', '' %>

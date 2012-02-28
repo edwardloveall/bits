@@ -1,3 +1,89 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "sassVars.css.scss";
+
+div#items {
+  hr {
+    height: 0;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+}
+.item {
+  margin: 2em 0;
+  .item-header {
+    margin-bottom: 1em;
+  }
+  
+  .url a {
+    color: #999;
+    font-size: $small;
+  }
+  
+  h2 {
+    > a {
+      padding: 0.1em 0.3em;
+      margin-left: -0.3em;
+      color: $textColor;
+      &:hover {
+        color: $textColor;
+        background-color: #ddd;
+      }
+    }
+    
+    .permalink {
+      font-size: $small;
+      vertical-align: middle;
+    }
+  }
+    
+  .url {
+    color: #777;
+  }
+  
+  .description {
+    line-height: 1.8em;
+    margin-bottom: 1em;
+    padding: 1em;
+    background: #ddd;
+  }
+  
+  .meta {
+    text-align: right;
+    a {
+      padding: .3em;
+      background: #f3f3f3;
+    }
+  }
+  
+  a.delete:hover {
+    color: #f00;
+  }
+}
+
+#newItem {
+  font-size: .6em;
+  text-align: center;
+  vertical-align: middle;
+  
+  a {
+    @include button;
+  }
+}
+
+#bookmarklet {
+  position: absolute;
+  width: 800px - 64px;
+  padding: 32px;
+  bottom: 0;
+  text-align: center;
+  background: #323232;
+  color: #eee;
+  
+  > a {
+    padding: .2em .5em;
+    background: #eee;
+  }
+}
