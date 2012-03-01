@@ -5,14 +5,9 @@
 @import "sassVars.css.scss";
 
 div#items {
-  hr {
-    height: 0;
-    border: none;
-    border-bottom: 1px solid #000;
-  }
 }
 .item {
-  margin: 2em 0;
+  margin: 0 0 4em;
   .item-header {
     margin-bottom: 1em;
   }
@@ -23,9 +18,11 @@ div#items {
   }
   
   h2 {
+    line-height: 1.2em;
+    
     > a {
+      @include roundedCorners(3px);
       padding: 0.1em 0.3em;
-      margin-left: -0.3em;
       color: $textColor;
       &:hover {
         color: $textColor;
@@ -41,20 +38,26 @@ div#items {
     
   .url {
     color: #777;
+    margin: .2em 0 0 0.7em;
   }
   
   .description {
+    @include roundedCorners(3px);
     line-height: 1.8em;
     margin-bottom: 1em;
     padding: 1em;
-    background: #ddd;
+    background: #ebebeb;
   }
   
   .meta {
     text-align: right;
+    font-size: .8em;
     a {
       padding: .3em;
       background: #f3f3f3;
+      &:hover {
+        background: #dbdbdb;
+      }
     }
   }
   
@@ -74,10 +77,13 @@ div#items {
 }
 
 #bookmarklet {
-  position: absolute;
+//  @include boxShadow(0, 0, 5px);
+  position: fixed;
   width: 800px - 64px;
-  padding: 32px;
-  bottom: 0;
+  line-height: 1.5em;
+//  padding: 20px;
+  top: 0;
+  
   text-align: center;
   background: #323232;
   color: #eee;

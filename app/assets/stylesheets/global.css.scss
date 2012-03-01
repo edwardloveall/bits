@@ -56,12 +56,17 @@ table {
 body {
   font-family: 'Asap', sans-serif;
   color: $textColor;
+  padding-bottom: 80px;
 }
 
 #mainWrap {
   width: 800px;
   margin: 0 auto;
   margin-top: 40px;
+  
+  h1 {
+    margin-bottom: 1em;
+  }
 }
 
 h1 { font-size: 3em; }
@@ -71,4 +76,39 @@ h3 { font-size: 1.3em; }
 a {
   color: $textColor;
   text-decoration: none;
+}
+
+form {
+  .field, .actions {
+    margin-bottom: 1em;
+    
+    label {
+      display: block;
+      margin-bottom: .5em;
+      font-weight: 700;
+    }
+    
+    input, textarea, select {
+      font-size: 1.1em;
+      padding: .7em;
+//      width: 40em;
+      width: 100%;
+      border: 1px solid #000;
+      color: #444;
+      
+      &:focus {
+        border-color: #C82829;
+        outline: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+form {
+  input[type=submit], button {
+    @include button;
+    border: 1px solid #888;
+    width: inherit;
+  }
 }

@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   respond_to :html, :json, :rss
 
   def index
-    respond_with @items = Item.all
+    respond_with @items = Item.all(order: "created_at DESC")
   end
 
   def show

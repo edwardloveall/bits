@@ -39,3 +39,9 @@ $small: 10px;
     background: linear-gradient(top, $topColorActive 50%, $bottomColorActive 100%);
   }
 }
+
+@mixin boxShadow($off-x: 0px, $off-y: 0px, $blur: 5px, $color: #444) {
+  -moz-box-shadow:    $off-x $off-y $blur $color;
+  -webkit-box-shadow: $off-x $off-y $blur $color;
+  box-shadow:         $off-x $off-y $blur $color;
+}
