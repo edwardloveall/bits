@@ -77,19 +77,34 @@ div#items {
 }
 
 #bookmarklet {
-//  @include boxShadow(0, 0, 5px);
-  position: fixed;
-  width: 800px - 64px;
+  @include roundedCorners(4px);
+  width: 798px;
   line-height: 1.5em;
-//  padding: 20px;
-  top: 0;
-  
+  margin-bottom: 1em;
+  padding: 1em 0;
   text-align: center;
-  background: #323232;
-  color: #eee;
+  background: #F5F5F5;
+  color: #333;
+  text-align: center;
+  border: 1px solid #bbb;
   
   > a {
+    @include roundedCorners(4px);
     padding: .2em .5em;
-    background: #eee;
+    background: #323232;
+    color: #eee;
+  }
+}
+
+nav.pagination {
+  text-align: right;
+  margin-bottom: 1.2em;
+  
+  .page a, .next a, .prev a {
+    color: #999;
+    
+    &.current {
+      color: black;
+    }
   }
 }

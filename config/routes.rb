@@ -1,6 +1,14 @@
 Bits::Application.routes.draw do
+  
+  # get 'url string', to: controller#action, as: path_name (e.g. signup_path, logout_url, etc)
+  get 'signup', to: 'users#new', as: :signup
+  get 'login', to: 'sessions#new', as: :login
+  get 'logout', to: 'sessions#destroy', as: :logout
+  get 'new', to: 'items#new', as: 'new_item'
+  
   resources :items
   resources :users
+  resources :sessions
   
   match 'feed' => 'items#index', :defaults => { :format => 'rss'}, as: :feed
   # The priority is based upon order of creation:

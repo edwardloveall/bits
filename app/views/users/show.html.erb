@@ -1,1 +1,12 @@
-<%= @user.username %>
+<h1><%= @user.username + "'s bits" %></h1>
+
+<%= render @items %>
+
+<%= paginate @items %>
+
+<% if current_user %>
+<div id="bookmarklet">
+  Drag this to your Bookmarks Bar: <%= link_to 'Post', '' %>
+</div>
+
+<% end %>

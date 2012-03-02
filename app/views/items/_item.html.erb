@@ -5,8 +5,13 @@
   </div> <!-- .item-header -->
   <p class="description"><%= item.description %></p>
   <div class="meta">
+    <% if item.user.present? %>
+    <%= link_to item.user.username, item.user, class: "author color-" + random_str(1, {seed: item.user.username, range: 4}) %>
+    <% end %>
     <%= link_to pretty_date(item.created_at, format: :numbers), item %>
-    <%= link_to 'Edit', edit_item_path(item), class: 'edit' %>
-    <%= link_to 'Delete', item, class: 'delete', confirm: 'Are you sure?', method: :delete %>
+    <% if current_user %>
+      <%= link_to 'Edit', edit_item_path(item), class: 'edit' %>
+      <%= link_to 'Delete', item, class: 'delete', confirm: 'Are you sure?', method: :delete %>
+    <% end %>
   </div>
 </div>

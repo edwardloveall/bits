@@ -9,7 +9,23 @@
 </head>
 <body>
   <div id="mainWrap">
-    <%= yield %>
+    <div id="content">
+      <% unless alert.nil? %>
+        <p id="alert" class="flash"><%= alert %></p>
+      <% end %>
+      <% unless notice.nil? %>
+        <p id="notice" class="flash"><%= notice %></p>
+      <% end %>
+    
+      <div id="session">
+        <%= link_to "Log in", login_path if !current_user %>
+        <%= link_to "Log out", logout_path if current_user %>
+      </div>
+      <%= yield %>
+    </div><!-- #content -->
   </div><!-- #mainWrap -->
+  <div id="footer">
+    &copy; <%= link_to "Edward Loveall", "http://edwardloveall.com/" %> <%= Time.now.strftime("%Y")%>
+  </div>
 </body>
 </html>

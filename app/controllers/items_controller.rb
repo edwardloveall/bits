@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  before_filter :authorize, only: [:edit, :new, :destroy]
   respond_to :html, :json, :rss
 
   def index
-    respond_with @items = Item.all(order: "created_at DESC")
+    respond_with @items = Item.order("created_at DESC").page(params[:page])
   end
 
   def show
@@ -13,6 +14,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.url = (defined? params['url']) ? params['url'] : nil
     @item.title = (defined? params['title']) ? params['title'] : nil
+    @item.user = current_user
     
     respond_with @item
   end

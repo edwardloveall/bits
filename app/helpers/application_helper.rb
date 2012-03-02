@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
  def pretty_date(date, options={})
    format = options[:format].to_s
    default = "%b %e, %Y"
@@ -12,5 +13,10 @@ module ApplicationHelper
     else
      formatted = date.strftime(default) # Oct 11, 2011
     end
+  end
+  
+  def random_str(length, options = {})
+    srand(options[:seed].int_hash)
+    (0...length).map{97.+(rand options[:range]).chr}.join
   end
 end
