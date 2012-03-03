@@ -8,13 +8,14 @@
   <%= auto_discovery_link_tag(:rss, feed_url) %>
 </head>
 <body>
+  <header><h1>Bits<span id="newItem"><%= link_to 'New Item', new_item_path if current_user %></span></h1></header>
   <div id="mainWrap">
     <div id="content">
       <% unless alert.nil? %>
-        <p id="alert" class="flash"><%= alert %></p>
+        <p class="alert flash"><%= alert %></p>
       <% end %>
       <% unless notice.nil? %>
-        <p id="notice" class="flash"><%= notice %></p>
+        <p class="notice flash"><%= notice %></p>
       <% end %>
     
       <div id="session">
@@ -24,8 +25,8 @@
       <%= yield %>
     </div><!-- #content -->
   </div><!-- #mainWrap -->
-  <div id="footer">
-    &copy; <%= link_to "Edward Loveall", "http://edwardloveall.com/" %> <%= Time.now.strftime("%Y")%>
-  </div>
+  <footer>
+    &copy; <%= link_to "Edward Loveall", "http://edwardloveall.com/", target: '_blank' %> <%= Time.now.strftime("%Y")%>
+  </footer>
 </body>
 </html>

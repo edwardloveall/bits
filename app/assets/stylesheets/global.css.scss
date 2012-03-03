@@ -62,6 +62,19 @@ body {
   color: $textColor;
 }
 
+header {
+  $headerBG: #eee;
+  background: $headerBG;
+  border-bottom: 1px solid darken($headerBG, 15%);
+  color: #333;
+  padding: 1em;
+  
+  h1 {
+    margin: 0 auto;
+    width: 800px;
+  }
+}
+
 #mainWrap {
   width: 800px;
   min-height: 100%;
@@ -70,7 +83,7 @@ body {
   
   #content {
     overflow: auto;
-    padding-bottom: 57px;
+    padding-bottom: 55px;
   }
   
   h1 {
@@ -122,13 +135,19 @@ form {
 }
 
 .flash {
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 2px solid black;
+  padding: 1em 1em 1em 46px;
+  margin: 1em 0;
+//  border: 2px solid black;
 }
 
-#alert { border-color: #B01A1D; }
-#notice { border-color: #718C00; }
+.alert {
+  color: #B01A1D;
+  background: transparent url(alert.png) no-repeat 10px center;
+}
+.notice {
+  color: #718C00;
+  background: transparent url(notice.png) no-repeat 10px center;
+}
 
 form {
   input[type=submit], button {
@@ -138,18 +157,19 @@ form {
   }
 }
 
-#footer {
+footer {
   $darkRed: darken(#C82829, 30%);
   
   clear: both;
   position: relative;
-  margin-top: -57px;
+  margin-top: -55px;
   
   font: 12px Georgia, serif;
   text-align: center;
   padding: 20px;
-  background: #C82829;
-  border-top: 3px solid $darkRed;
+//  background: #C82829;
+  background: lighten($darkRed, 30%);
+  border-top: 1px solid $darkRed;
   
   color: $darkRed;
   

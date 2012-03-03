@@ -67,12 +67,15 @@ div#items {
 }
 
 #newItem {
-  font-size: .6em;
   text-align: center;
-  vertical-align: middle;
+  margin-left: 1em;
+  background: #333;
+  @include roundedCorners(1em);
   
   a {
-    @include button;
+    color: #f5f5f5;
+    background: transparent url(new.png) no-repeat 3px 3px;
+    padding: 0 24px 0 60px;
   }
 }
 
