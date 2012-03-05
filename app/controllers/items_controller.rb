@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :authorize, only: [:edit, :new, :destroy]
+  before_filter :single_item, only: [:show]
   respond_to :html, :json, :rss
 
   def index
@@ -39,5 +40,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     flash[:notice] = "Deleted Item" if @item.destroy
     respond_with @item
+  end
+  
+  private
+  
+  def single_item
+    @delete_enabled = params[:action] == 'show' and params[:controller] == 'items' ? true : false
   end
 end

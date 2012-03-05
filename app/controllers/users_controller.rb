@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @colors = Color.all
   end
   
   def show
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user]) # make a new user from the params passed from #new
+    @user.color_id = params[:user][:color_id]
     @user.password = params[:user][:password] # the protected attributes
     @user.password_confirmation = params[:user][:password_confirmation]
     
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
   
   def update
     @user.username = params[:user][:username]
+    @user.color_id = params[:user][:color_id]
     @user.password = params[:user][:password]
     @user.password_confirmation = params[:user][:password_confirmation]
     
@@ -45,5 +48,6 @@ class UsersController < ApplicationController
   
   def get_user
     @user = User.find(params[:id])
+    @colors = Color.all
   end
 end

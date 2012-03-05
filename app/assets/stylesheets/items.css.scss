@@ -47,12 +47,13 @@ div#items {
     margin-bottom: 1em;
     padding: 1em;
     background: #ebebeb;
+    overflow: hidden;
   }
   
   .meta {
     text-align: right;
     font-size: .8em;
-    a {
+    a.edit, a.permalink, a.delete {
       padding: .3em;
       background: #f3f3f3;
       &:hover {

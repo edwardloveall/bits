@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   has_many :items
+  has_one  :color
+  
   has_secure_password
   
-  attr_accessible :username, :password, :password_confirmation
+  attr_accessible :username, :color_id, :password, :password_confirmation
   
   validates_uniqueness_of :username
   validates_presence_of :password, on: :create

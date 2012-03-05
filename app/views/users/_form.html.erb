@@ -10,7 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="color-picker field">
+    <%= f.label :color_id %>
+    <%= f.hidden_field :color_id %>
+    <% @colors.each do |color| %><div id="user-color-<%= color.id %>" class="color-single"></div><% end %>
+  </div>
   <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username %>
