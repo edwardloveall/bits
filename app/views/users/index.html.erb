@@ -2,7 +2,7 @@
 
 <% @users.each do |user| %>
   <div class="user">
-    <%= link_to user.username, user, class: "author color-" + random_str(1, {seed: user.username, range: 4}) %>
+    <%= link_to user.username, user, class: "author user-color-" + user.color_id.to_s %>
     <%= link_to 'edit', edit_user_path(user), class: "edit-user" if current_user %>
   </div>
 <% end %>
