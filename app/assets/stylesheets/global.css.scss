@@ -100,6 +100,12 @@ a {
   text-decoration: none;
 }
 
+.hide-text { // from http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 form {
   .field, .actions {
     margin-bottom: 1em;

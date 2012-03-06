@@ -10,7 +10,8 @@ Bits::Application.routes.draw do
   resources :users
   resources :sessions
   
-  match 'feed' => 'items#index', :defaults => { :format => 'rss'}, as: :feed
+  match 'feed' => 'items#index', defaults: { format: 'rss'}, as: :feed
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

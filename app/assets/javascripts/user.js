@@ -11,6 +11,9 @@ $(document).ready(function() {
     $(this).addClass("selected")
   })
   
-  var selectedColorID = $('#user_color_id').val().toString();
-  $("#user-color-" + selectedColorID).addClass("selected")
+  try {
+    var selectedColorID = $('#user_color_id').val().toString();
+    $("#user-color-" + selectedColorID).addClass("selected")
+  } catch(err) {} // don't do this because you're not on the user's edit page
+  
 })

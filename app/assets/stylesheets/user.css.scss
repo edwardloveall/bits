@@ -22,14 +22,14 @@
   @include roundedCorners(1em);
   padding: .3em .7em;
       
-  &.color-a { background-color: adjust-color(#E21509, $lightness: 20%, $saturation: -10%); }
-  &.color-b { background-color: adjust-color(#FF8701, $lightness: 20%, $saturation: -10%); }
-  &.color-c { background-color: adjust-color(#D5FF00, $lightness: 20%, $saturation: -10%); }
-  &.color-d { background-color: adjust-color(#48E2A9, $lightness: 20%, $saturation: -10%); }
-      
   &:hover {
     color: #444;
   }
+}
+
+.user-top {
+  font-size: 3em;
+  margin-bottom: 1em;
 }
 
 .color-picker {
