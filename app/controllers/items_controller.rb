@@ -8,6 +8,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @bookmarklet = session[:bookmarklet]
+    session[:bookmarklet] = nil
     respond_with @item = Item.find(params[:id])
   end
 
