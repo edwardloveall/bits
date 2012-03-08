@@ -67,6 +67,14 @@ div#items {
   }
 }
 
+.edit_item .delete {
+  padding-left: 19px;
+  
+  &:hover {
+    color: #f00;
+  }
+}
+
 #newItem {
   text-align: center;
   margin-left: 1em;

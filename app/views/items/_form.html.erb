@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= collection_select(:item, :user_id, User.all, :id, :username) %>
   </div>
@@ -28,5 +28,8 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
+  <div class="actions">
+    <%= link_to 'Delete Item', @item, class: 'delete', confirm: 'Are you sure?', method: :delete if @delete_enabled %>
   </div>
 <% end %>

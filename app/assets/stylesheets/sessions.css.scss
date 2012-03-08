@@ -7,4 +7,15 @@
 #session {
   text-align: right;
   padding: 1em 0;
+  
+  a {
+    padding: .2em 1.1em;
+    border: 1px solid transparent;
+    @include roundedCorners(1em);
+    
+    &:hover {
+      background: #e2e2e2;
+      border-color: #aaa;
+    }
+  }
 }

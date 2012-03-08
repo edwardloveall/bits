@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :authorize, only: [:edit, :new, :destroy]
-  before_filter :single_item, only: [:show]
+  before_filter :single_item, only: [:show, :edit]
   respond_to :html, :json, :rss
 
   def index
@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.url = (defined? params['url']) ? params['url'] : nil
     @item.title = (defined? params['title']) ? params['title'] : nil
+    session[:bookmarklet] = (defined? params['bookmarklet']) ? params['bookmarklet'] : false
     @item.user = current_user
     
     respond_with @item
@@ -32,19 +33,19 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    flash[:notice] = "Updated Item" if @item.update_attributes(params[:item])
+    flash[:notice] = "Item Updated" if @item.update_attributes(params[:item])
     respond_with @item
   end
 
   def destroy
     @item = Item.find(params[:id])
-    flash[:notice] = "Deleted Item" if @item.destroy
+    flash[:notice] = "Item Deleted" if @item.destroy
     respond_with @item
   end
   
   private
   
   def single_item
-    @delete_enabled = params[:action] == 'show' and params[:controller] == 'items' ? true : false
+    @delete_enabled = (params[:action] == 'show' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
   end
 end
