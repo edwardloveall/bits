@@ -10,7 +10,10 @@
 </head>
 <body>
   <header><h1><%= link_to 'Bits', root_path %>
-    <span id="newItem"><%= link_to 'New Item', new_item_path if current_user %></span></h1></header>
+    <% if @new_item_endabled != false %>
+      <span id="newItem"><%= link_to 'New Item', new_item_path if current_user %></span>
+    <% end %>
+  </h1></header>
   <div id="mainWrap">
     <div id="content">
       <% unless alert.nil? %>

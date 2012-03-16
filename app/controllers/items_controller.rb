@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_filter :authorize, only: [:edit, :new, :destroy]
   before_filter :single_item, only: [:show, :edit]
+  before_filter :disable_new_link, only: [:new, :edit]
   respond_to :html, :json, :rss
 
   def index
@@ -50,4 +51,10 @@ class ItemsController < ApplicationController
   def single_item
     @delete_enabled = (params[:action] == 'show' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
   end
+  
+  def disable_new_link
+    # @new_item_endabled = (params[:action] == 'new' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
+    @new_item_endabled = false
+  end
+  
 end
