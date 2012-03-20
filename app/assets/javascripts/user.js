@@ -16,4 +16,11 @@ $(document).ready(function() {
     $("#user-color-" + selectedColorID).addClass("selected")
   } catch(err) {} // don't do this because you're not on the user's edit page
   
+  // register_item_events();
+  
+  $('#item_description').keydown(function (e) {
+     if (e.keyCode == 13 && e.shiftKey) {
+       $("#new_item").submit()
+     }
+   });
 })
