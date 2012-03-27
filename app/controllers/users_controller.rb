@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
   
   def update
+    @user.name = params[:user][:name]
     @user.username = params[:user][:username]
     @user.color_id = params[:user][:color_id]
     @user.password = params[:user][:password]

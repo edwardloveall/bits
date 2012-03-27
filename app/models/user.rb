@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :color_id, :password, :password_confirmation
   
   validates_uniqueness_of :username
+  validates_uniqueness_of :name
   validates_presence_of :password, on: :create
   
   before_create { generate_token(:auth_token) }

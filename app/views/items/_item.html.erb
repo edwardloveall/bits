@@ -11,7 +11,7 @@
   <p class="description"><%= item.description %></p>
   <div class="meta">
     <% if item.user.present? %>
-    <%= link_to item.user.username, item.user, class: "author user-color-" + item.user.color_id.to_s %>
+    <%= link_to item.user.name, item.user, class: "author user-color-" + item.user.color_id.to_s %>
     <% end %>
     <%= link_to pretty_date(item.created_at, format: :numbers), item, class: 'permalink' %>
     <% if current_user %>

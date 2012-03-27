@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304160649) do
+ActiveRecord::Schema.define(:version => 20120326232058) do
 
   create_table "colors", :force => true do |t|
     t.string   "color_class"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20120304160649) do
     t.datetime "updated_at",      :null => false
     t.string   "auth_token"
     t.integer  "color_id"
+    t.string   "name"
   end
 
 end

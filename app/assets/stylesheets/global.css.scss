@@ -83,7 +83,7 @@ header {
   
   #content {
     overflow: auto;
-    padding-bottom: 55px;
+    padding-bottom: 75px;
   }
   
   h1 {
@@ -153,6 +153,13 @@ form {
 .notice {
   color: #718C00;
   background: transparent url(notice.png) no-repeat left center;
+}
+
+#delete_user {
+  @include button(#df3034);
+  color: #fff;
+  border: none;
+  float: right;
 }
 
 form {
