@@ -17,12 +17,15 @@ $small: 10px;
   padding: .2em 1.1em;
   color: #000;
   text-align: center;
-  @include gradient($topColor, $bottomColor);
+  
+//  @include gradient($topColor, $bottomColor);
+  background: $topColor;
   border: 1px solid #888;
   @include roundedCorners(1em);
   
   &:active {
-    @include gradient($topColorActive, $bottomColorActive);
+    background: $topColorActive;
+//    @include gradient($topColorActive, $bottomColorActive);
   }
 }
 

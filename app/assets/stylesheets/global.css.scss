@@ -156,10 +156,19 @@ form {
 }
 
 #delete_user {
-  @include button(#df3034);
-  color: #fff;
-  border: none;
+  -webkit-transition-property: background-color, color, border-color;
+  -webkit-transition-duration: .1s;
+  -webkit-transition-timing-function: ease-out;
+  @include button;
+  color: #444;
+//  border: none;
   float: right;
+  
+  &:hover {
+    background-color: #df3034;
+    color: #fff;
+    border-color: transparent;
+  }
 }
 
 form {
