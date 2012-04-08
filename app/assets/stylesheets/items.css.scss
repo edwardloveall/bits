@@ -48,6 +48,32 @@ div#items {
     padding: 1em;
     background: #ebebeb;
     overflow: hidden;
+    
+    a {
+      color: #444;
+      border-bottom: 1px dashed #444;
+    }
+    
+    pre {
+      background: #333;
+      color: #ddd;
+      padding: 1em;
+    }
+    
+    ol { list-style-type: decimal; }
+    ul { list-style-type: disc; }
+    
+    ol, ul {
+      list-style-position: inside;
+    }
+    
+    em {
+      font-style: italic;
+    }
+    
+    strong {
+      font-weight: bold;
+    }
   }
   
   .meta {

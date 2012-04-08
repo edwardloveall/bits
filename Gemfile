@@ -32,3 +32,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Developer added gems
 gem 'kaminari'
+gem 'redcarpet'
