@@ -6,7 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'
-# gem 'pg'
+gem 'pg'
 
 group :development do
   gem 'sqlite3'
@@ -33,3 +33,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Developer added gems
 gem 'kaminari'
 gem 'redcarpet'
+
+gem 'capistrano'
+gem 'unicorn'
