@@ -2,7 +2,7 @@ require "bundler/capistrano"
 
 server "108.166.83.125", :web, :app, :db, primary: true
 
-set :applicatoin, "bits"
+set "application", "bits"
 set :user, "deployer"
 set :deploy_to, "/home#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
