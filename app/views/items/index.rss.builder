@@ -8,7 +8,7 @@ xml.rss :version => "2.0" do
     for item in @items
       xml.item do
         xml.title item.title
-        xml.description item.description
+        xml.description to_markdown(item.description)
         xml.pubDate item.created_at.to_s(:rfc822)
         xml.link item.url
         xml.guid item.url
