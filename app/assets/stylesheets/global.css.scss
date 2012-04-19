@@ -75,6 +75,31 @@ header {
   }
 }
 
+pre {
+  background: #333;
+  color: #ddd;
+  padding: 1em;
+}
+    
+ol { list-style-type: decimal; }
+ul { list-style-type: disc; }
+    
+ol, ul {
+  list-style-position: inside;
+}
+    
+em {
+  font-style: italic;
+}
+    
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: .8em;
+}
+
 #mainWrap {
   width: 800px;
   min-height: 100%;

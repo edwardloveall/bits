@@ -1,0 +1,39 @@
+<small id="show-md-sheet">formatting</small>
+<div id="markdown-cheat-sheet" class="helper" style="display: none;">
+  <div id="md-italic" class="syntax">
+    <div class="left">
+      <pre><code>_italic_</code></pre>
+    </div>
+    <div class="right">
+      <%= to_markdown("_italic_") %>
+    </div>
+  </div>
+  
+  <div id="md-bold" class="syntax">
+    <div class="left">
+      <pre><code>**bold**</code></pre>
+    </div>
+    <div class="right">
+      <%= to_markdown("**bold**") %>
+    </div>
+  </div>
+  
+  <div id="md-link" class="syntax">
+    <div class="left">
+      <pre><code>[a link to google](http://google.com)</code></pre>
+    </div>
+    <div class="right">
+      <%= to_markdown("[a link to google](http://google.com)") %>
+    </div>
+  </div>
+  
+  <div id="md-image" class="syntax">
+    <div class="left">
+      <pre><code>![party hard](http://i.imgur.com/edqpt.gif)</code></pre>
+    </div>
+    <div class="right">
+      <%= to_markdown("![party hard](http://i.imgur.com/edqpt.gif)") %>
+    </div>
+  </div>
+  
+</div>

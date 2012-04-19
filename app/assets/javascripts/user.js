@@ -23,4 +23,9 @@ $(document).ready(function() {
        $("#new_item").submit()
      }
    });
+   
+   $('#show-md-sheet').click(function(e) {
+     e.preventDefault();
+     $('#markdown-cheat-sheet').slideToggle('200')
+   })
 })
