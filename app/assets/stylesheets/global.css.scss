@@ -121,8 +121,13 @@ h2 { font-size: 2em; }
 h3 { font-size: 1.3em; }
 
 a {
+  @include quickBGAnimate;
   color: $textColor;
   text-decoration: none;
+}
+
+input[type=submit] {
+  cursor: pointer;
 }
 
 .hide-text { // from http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
@@ -181,9 +186,6 @@ form {
 }
 
 #delete_user {
-  -webkit-transition-property: background-color, color, border-color;
-  -webkit-transition-duration: .1s;
-  -webkit-transition-timing-function: ease-out;
   @include button;
   color: #444;
 //  border: none;

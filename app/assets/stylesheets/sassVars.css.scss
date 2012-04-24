@@ -45,3 +45,19 @@ $small: 10px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
   background: linear-gradient(top, $topColor 50%, $bottomColor 100%);
 }
+
+@mixin quickBGAnimate {
+  -webkit-transition-property:background-color, color, border-color;
+     -moz-transition-property:background-color, color, border-color;
+       -o-transition-property:background-color, color, border-color;
+          transition-property:background-color, color, border-color;
+  /*transition-duration*/
+  -webkit-transition-duration:.1s;
+     -moz-transition-duration:.1s;
+       -o-transition-duration:.1s;
+          transition-duration:.1s;
+  /*transition-timing-function*/
+  -webkit-transition-timing-function:ease-out;
+     -moz-transition-timing-function:ease-out;
+       -o-transition-timing-function:ease-out;
+          transition-timing-function:ease-out;}
