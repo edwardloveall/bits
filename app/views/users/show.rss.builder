@@ -7,6 +7,12 @@ xml.rss :version => "2.0" do
 
     for item in @user.items
       xml.item do
+        
+        xml.author do |author|
+          author.name item.user.name
+          author.uri user_url(item.user)
+        end
+        
         xml.title item.title
         xml.description to_markdown(item.description) + "<br><br>".html_safe + 
           link_to("(permalink)", item_url(item.id)) # this could be cleaner

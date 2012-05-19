@@ -6,6 +6,11 @@ xml.rss :version => "2.0" do
     xml.link items_url
 
     for item in @items
+      xml.author do |author|
+        author.name item.user.name
+        author.uri user_url(item.user)
+      end
+      
       xml.item do
         xml.title item.title
         xml.description to_markdown(item.description)
