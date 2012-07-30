@@ -1,0 +1,53 @@
+@mixin button($topColor: #eeeeee) {
+  $bottomColor: darken($topColor, 10%);
+  $topColorActive: darken($topColor, 13%);
+  $bottomColorActive: darken($topColor, 3%);
+  
+  display: inline-block;
+  padding: .2em 1.1em;
+  color: #000;
+  text-align: center;
+  
+//  @include gradient($topColor, $bottomColor);
+  background: $topColor;
+  border: 1px solid #888;
+  border-radius: 1em;
+  
+  &:active {
+    background: $topColorActive;
+//    @include gradient($topColorActive, $bottomColorActive);
+  }
+}
+
+@mixin boxShadow($off-x: 0px, $off-y: 0px, $blur: 5px, $color: #444) {
+  -moz-box-shadow:    $off-x $off-y $blur $color;
+  -webkit-box-shadow: $off-x $off-y $blur $color;
+  box-shadow:         $off-x $off-y $blur $color;
+}
+
+@mixin gradient($topColor: #f7f7f7, $bottomColor: #ddd) {
+  background-image: $topColor;
+  background-image: -moz-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, $topColor), color-stop(100%, $bottomColor));
+  background-image: -webkit-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  background-image: -o-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  background-image: -ms-linear-gradient(top, $topColor 50%, $bottomColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+  background: linear-gradient(top, $topColor 50%, $bottomColor 100%);
+}
+
+@mixin quickBGAnimate {
+  -webkit-transition-property:background-color, color, border-color;
+     -moz-transition-property:background-color, color, border-color;
+       -o-transition-property:background-color, color, border-color;
+          transition-property:background-color, color, border-color;
+  /*transition-duration*/
+  -webkit-transition-duration:.1s;
+     -moz-transition-duration:.1s;
+       -o-transition-duration:.1s;
+          transition-duration:.1s;
+  /*transition-timing-function*/
+  -webkit-transition-timing-function:ease-out;
+     -moz-transition-timing-function:ease-out;
+       -o-transition-timing-function:ease-out;
+          transition-timing-function:ease-out;}

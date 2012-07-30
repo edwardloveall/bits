@@ -3,22 +3,20 @@
     window.close()
   </script>
 <% end %>
-<div class="item">
-  <div class="item-header">
-    <h2><%= link_to item.title, item.url, html_options = { target: '_blank' } %></h2>
-    <div class="url"><%= link_to truncate_url(item.url), item.url, html_options = { target: '_blank' } %></div>
-  </div> <!-- .item-header -->
-  <% if !item.description.blank? %>
-  <div class="description"><%= to_markdown(item.description) %></div>
+<article class="item">
+  <h2><%= link_to item.title, item.url, html_options = { target: '_blank' } %></h2>
+  <% if item.description.present? %>
+    <section class="description"><%= to_markdown(item.description) %></section>
   <% end %>
-  <div class="meta">
+  <span class="author">
     <% if item.user.present? %>
-    <%= link_to item.user.name, item.user, class: "author user-color-" + item.user.color_id.to_s %>
+    <%= link_to item.user.name, item.user, class: "user-color-" + item.user.color_id.to_s %>
     <% end %>
-    <%= link_to pretty_date(item.created_at, format: :numbers), item, class: 'permalink' %>
-    <% if current_user %>
-      <%= link_to 'Edit', edit_item_path(item), class: 'edit' %>
-      <%= link_to 'Delete', item, class: 'delete', confirm: 'Are you sure?', method: :delete if @delete_enabled %>
-    <% end %>
-  </div>
-</div>
+  </span>
+</article>
+<section class="meta">
+  <% if current_user %>
+    <%= link_to 'Edit', edit_item_path(item), class: 'edit' %>
+    <%= link_to 'Delete', item, class: 'delete', confirm: 'Are you sure?', method: :delete if @delete_enabled %>
+  <% end %>
+</section>

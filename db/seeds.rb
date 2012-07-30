@@ -1,5 +1,5 @@
 ### make an initial user
-User.create(name: "Edward", username: "edward", password: "123456", password_confirmation: "123456")
+# User.create(name: "Edward", username: "edward", password: "123456", password_confirmation: "123456")
 
 ### add color records
 1.upto(25) do |i|
