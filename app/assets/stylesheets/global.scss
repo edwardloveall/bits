@@ -1,0 +1,239 @@
+// =============
+// = CSS Reset =
+// =============
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// ==============
+// = Global CSS =
+// ==============
+
+@import url(http://fonts.googleapis.com/css?family=Asap:400,700,400italic);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Asap', sans-serif;
+  color: $textColor;
+}
+
+header {
+  $headerBG: #eee;
+  background: $headerBG;
+  border-bottom: 1px solid darken($headerBG, 15%);
+  color: #333;
+  padding: 1em;
+  
+  h1 {
+    margin: 0 auto;
+    width: 800px;
+    
+    span#new-item {
+      border-radius: 1em;
+      background: #333;
+      margin-left: 1em;
+      
+      a {
+        background: transparent url(new.png) no-repeat 3px 3px;
+        color: #f5f5f5;
+        padding: 0 24px 0 60px;
+      }
+    }
+  }
+}
+
+pre {
+  background: #333;
+  color: #ddd;
+  padding: 1em;
+}
+    
+ol { list-style-type: decimal; }
+ul { list-style-type: disc; }
+    
+ol, ul {
+  list-style-position: inside;
+}
+    
+em {
+  font-style: italic;
+}
+    
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: .8em;
+}
+
+#mainWrap {
+  width: 800px;
+  min-height: 100%;
+  margin: 0 auto;
+//  margin-top: 40px;
+  
+  #content {
+    overflow: auto;
+    padding-bottom: 75px;
+  }
+  
+  h1 {
+    margin-bottom: 1em;
+  }
+}
+
+h1 { font-size: 3em; }
+h3 { font-size: 1.3em; }
+
+a {
+  @include quickBGAnimate;
+  color: $textColor;
+  text-decoration: none;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+.hide-text { // from http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+form {
+  .field, .actions {
+    margin-bottom: 1em;
+    
+    label {
+      display: block;
+      margin-bottom: .5em;
+      font-weight: 700;
+    }
+    
+    input, textarea, select {
+      width: 774px;
+      font-size: 1.1em;
+      padding: .7em;
+      border: 1px solid #000;
+      color: #444;
+      
+      &:focus {
+        border-color: #C82829;
+        outline: none;
+        color: #000;
+      }
+    }
+    
+    select {
+      width: inherit;
+    }
+    
+    textarea {
+      height: 6em;
+    }
+  }
+}
+
+.flash {
+  padding: 1em 1em 1em 36px;
+  margin: 1em 0;
+//  border: 2px solid black;
+}
+
+.alert {
+  color: #B01A1D;
+  background: transparent url(alert.png) no-repeat left center;
+}
+.notice {
+  color: #718C00;
+  background: transparent url(notice.png) no-repeat left center;
+}
+
+#delete_user {
+  @include button;
+  color: #444;
+//  border: none;
+  float: right;
+  
+  &:hover {
+    background-color: #df3034;
+    color: #fff;
+    border-color: transparent;
+  }
+}
+
+form {
+  input[type=submit], button {
+    @include button;
+    border: 1px solid #888;
+    width: inherit;
+  }
+}
+
+footer {
+  $darkRed: darken(#C82829, 30%);
+  
+  clear: both;
+  position: relative;
+  margin-top: -55px;
+  
+  font: 12px Georgia, serif;
+  text-align: center;
+  padding: 20px;
+//  background: #C82829;
+  background: lighten($darkRed, 30%);
+  border-top: 1px solid $darkRed;
+  
+  color: $darkRed;
+  
+  a {
+    color: $darkRed;
+    border-bottom: 1px dashed $darkRed;
+  }
+}

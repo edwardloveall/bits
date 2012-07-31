@@ -1,0 +1,104 @@
+// Items
+// ----------------------------------------
+
+article.item {
+  background: $bg-shade-1;
+  border: 1px solid #aaa;
+  @include box-shadow(2px 1px 2px rgba(0,0,0,0.2));
+  @include box-sizing(border-box);
+  margin-bottom: 30px;
+  padding: 30px;
+  position: relative;
+    
+  h2 {
+    font-size: $font-size-3;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-shadow: 0 1px 0 #fff;
+  }
+    
+  section.description {
+    font-size: $font-size-2;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+  }
+    
+  span.author {
+    a {
+      border-radius: 1em;
+      color: rgba(0,0,0,0.5);
+      font-size: $font-size-2;
+      padding: .2em .7em;
+        
+      &:hover {
+        color: rgba(0,0,0,0.8);
+      }
+    }
+  }
+  
+  &:hover {
+    section.meta {
+      display: block;
+    }
+  }
+  
+  section.meta {
+    display: none;
+    @include position(absolute, 30px 30px 0 0);
+    text-align: right;
+    
+    a {
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: $bg-shade-2;
+      display: block;
+      margin-bottom: .3em;
+      text-align: center;
+      padding: .2em .7em;
+      
+      &:hover {
+        background: white;
+        border-color: $bg-shade-2;
+      }
+    }
+  }
+}
+
+// Markdown Cheat Sheet
+// ----------------------------------------
+
+#markdown-cheat-sheet {
+  clear: both;
+  padding: 1em 0;
+  
+  .left, .right {
+    padding: 0;
+    margin: 1px inherit;
+    display: inline-block;
+    width: 388px;
+  }
+  
+  .left pre, .right {
+    padding: 5px 8px;
+  }
+  
+  .left {
+    vertical-align: top;
+    border: 1px solid darken(#333, 10%);
+  }
+  
+  .right {
+    background: #F8F7F1;
+    border: 1px solid darken(#F8F7F1, 10%);
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+#show-md-sheet {
+  float: right;
+  cursor: pointer;
+  color: #444;
+}

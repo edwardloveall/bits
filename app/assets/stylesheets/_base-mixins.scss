@@ -1,13 +1,3 @@
-$textColor: #000;
-
-$small: 10px;
-
-@mixin roundedCorners($radius: 1em) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-}
-
 @mixin button($topColor: #eeeeee) {
   $bottomColor: darken($topColor, 10%);
   $topColorActive: darken($topColor, 13%);
@@ -20,8 +10,8 @@ $small: 10px;
   
 //  @include gradient($topColor, $bottomColor);
   background: $topColor;
-  border: 1px solid #888;
-  @include roundedCorners(1em);
+  border: 1px solid $color-2;
+  border-radius: 1em;
   
   &:active {
     background: $topColorActive;

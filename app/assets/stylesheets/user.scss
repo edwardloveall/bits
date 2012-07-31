@@ -1,0 +1,78 @@
+// Place all the styles related to the User controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "sassVars.css.scss";
+
+.user {
+  @include roundedCorners;
+  font-size: 2em;
+  margin-bottom: 1em;
+  
+  .edit-user {
+    display: none;
+  }
+  
+  &:hover .edit-user {
+    display: inline;
+  }
+}
+
+.item > .meta .author, .author {
+  @include roundedCorners(1em);
+  padding: .3em .7em;
+      
+  &:hover {
+    color: #444;
+  }
+}
+
+.user-top {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+.color-picker {
+  width: 125px;
+//  line-height: 1em;
+  
+  .color-single {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    margin-right: 2px;
+    display: inline-block;
+    
+    &.selected {
+      background-image: url(selected-color.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+#user-color-1, .user-color-1 { background-color: #ff3333; }
+#user-color-2, .user-color-2 { background-color: #ff4747; }
+#user-color-3, .user-color-3 { background-color: #cc66ff; }
+#user-color-4, .user-color-4 { background-color: #ff33ff; }
+#user-color-5, .user-color-5 { background-color: #ff5599; }
+#user-color-6, .user-color-6 { background-color: #cccc00; }
+#user-color-7, .user-color-7 { background-color: #00cc00; }
+#user-color-8, .user-color-8 { background-color: #66cc00; }
+#user-color-9, .user-color-9 { background-color: #47ffff; }
+#user-color-10, .user-color-10 { background-color: #6699ff; }
+#user-color-11, .user-color-11 { background-color: #ffcc66; }
+#user-color-12, .user-color-12 { background-color: #ff7f66; }
+#user-color-13, .user-color-13 { background-color: #e6ff66; }
+#user-color-14, .user-color-14 { background-color: #99ff66; }
+#user-color-15, .user-color-15 { background-color: #b3ffd9; }
+#user-color-16, .user-color-16 { background-color: #ffb3d9; }
+#user-color-17, .user-color-17 { background-color: #b3ffff; }
+#user-color-18, .user-color-18 { background-color: #ffffb3; }
+#user-color-19, .user-color-19 { background-color: #d9ffb3; }
+#user-color-20, .user-color-20 { background-color: #b99aff; }
+#user-color-21, .user-color-21 { background-color: #cc6600; }
+#user-color-22, .user-color-22 { background-color: #cc9900; }
+#user-color-23, .user-color-23 { background-color: #ff6633; }
+#user-color-24, .user-color-24 { background-color: #aaaaaa; }
+#user-color-25, .user-color-25 { background-color: #e7e2da; }
