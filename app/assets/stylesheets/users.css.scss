@@ -1,9 +1,3 @@
-// Place all the styles related to the User controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-@import "sassVars.css.scss";
-
 .user {
   @include roundedCorners;
   font-size: 2em;
@@ -19,7 +13,7 @@
 }
 
 .item > .meta .author, .author {
-  @include roundedCorners(1em);
+  border-radius: 1em;
   padding: .3em .7em;
       
   &:hover {

@@ -6,7 +6,6 @@
 <div class="item">
   <div class="item-header">
     <h2><%= link_to item.title, item.url, html_options = { target: '_blank' } %></h2>
-    <div class="url"><%= link_to truncate_url(item.url), item.url, html_options = { target: '_blank' } %></div>
   </div> <!-- .item-header -->
   <% if !item.description.blank? %>
   <div class="description"><%= to_markdown(item.description) %></div>

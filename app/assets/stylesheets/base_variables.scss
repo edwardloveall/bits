@@ -1,6 +1,6 @@
 $textColor: #000;
 
-$small: 10px;
+$base-font-size-small: 10px;
 
 @mixin roundedCorners($radius: 1em) {
   -moz-border-radius: $radius;
@@ -21,7 +21,7 @@ $small: 10px;
 //  @include gradient($topColor, $bottomColor);
   background: $topColor;
   border: 1px solid #888;
-  @include roundedCorners(1em);
+  border-radius: 1em;
   
   &:active {
     background: $topColorActive;
@@ -47,10 +47,10 @@ $small: 10px;
 }
 
 @mixin quickBGAnimate {
-  -webkit-transition-property:background-color, color, border-color;
-     -moz-transition-property:background-color, color, border-color;
-       -o-transition-property:background-color, color, border-color;
-          transition-property:background-color, color, border-color;
+  -webkit-transition-property:all;
+     -moz-transition-property:all;
+       -o-transition-property:all;
+          transition-property:all;
   /*transition-duration*/
   -webkit-transition-duration:.1s;
      -moz-transition-duration:.1s;
