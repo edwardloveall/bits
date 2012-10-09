@@ -2,12 +2,6 @@ $textColor: #000;
 
 $base-font-size-small: 10px;
 
-@mixin roundedCorners($radius: 1em) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-}
-
 @mixin button($topColor: #eeeeee) {
   $bottomColor: darken($topColor, 10%);
   $topColorActive: darken($topColor, 13%);
