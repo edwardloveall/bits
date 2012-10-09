@@ -15,16 +15,13 @@
     <%= collection_select(:item, :user_id, User.all, :id, :username) %>
   </div>
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: "Link Title" %>
   </div>
   <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, placeholder: "Link URL" %>
   </div>
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Description" %>
   </div>
   <%= render 'markdown_cheat' %>
   <div class="actions">

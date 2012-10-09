@@ -87,40 +87,6 @@ input[type=submit] {
   overflow: hidden;
 }
 
-form {
-  .field, .actions {
-    margin-bottom: 1em;
-    
-    label {
-      display: block;
-      margin-bottom: .5em;
-      font-weight: 700;
-    }
-    
-    input, textarea, select {
-      width: 774px;
-      font-size: 1.1em;
-      padding: .7em;
-      border: 1px solid #000;
-      color: #444;
-      
-      &:focus {
-        border-color: #C82829;
-        outline: none;
-        color: #000;
-      }
-    }
-    
-    select {
-      width: inherit;
-    }
-    
-    textarea {
-      height: 6em;
-    }
-  }
-}
-
 .flash {
   padding: 1em 1em 1em 36px;
   margin: 1em 0;
@@ -149,32 +115,15 @@ form {
   }
 }
 
-form {
-  input[type=submit], button {
-    @include button;
-    border: 1px solid #888;
-    width: inherit;
-  }
-}
-
 footer {
-  $darkRed: darken(#C82829, 30%);
-  
   clear: both;
-  position: relative;
+  font-size: 12px;
   margin-top: -55px;
-  
-  font: 12px Georgia, serif;
-  text-align: center;
   padding: 20px;
-//  background: #C82829;
-  background: lighten($darkRed, 30%);
-  border-top: 1px solid $darkRed;
-  
-  color: $darkRed;
+  position: relative;
+  text-align: center;
   
   a {
-    color: $darkRed;
-    border-bottom: 1px dashed $darkRed;
+    border-bottom: 1px dashed black;
   }
 }

@@ -65,20 +65,26 @@ div#items {
   }
   
   .meta {
-    text-align: left;
     font-size: .8em;
+    text-align: left;
     
-    a.edit, a.permalink, a.delete {
-      padding: .3em;
+    a {
+      border-radius: 1em;
+      padding: .3em .8em;
       
       &:hover {
         background: white;
+      }
+      
+      &.permalink {
+        margin-left: .7em;
       }
     }
   }
   
   a.delete:hover {
-    color: #f00;
+    background: #E53128;
+    color: white;
   }
 }
 

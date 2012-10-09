@@ -1,0 +1,44 @@
+form {
+  .field, .actions {
+    margin-bottom: 1em;
+    
+    label {
+      display: block;
+      margin-bottom: .5em;
+      font-weight: 700;
+    }
+    
+    input, textarea, select {
+      border: 1px solid $base-border-color;
+      color: #444;
+      font-size: 1.1em;
+      padding: .7em;
+      width: 774px;
+      
+      &:focus {
+        border-color: #C82829;
+        outline: none;
+        color: #000;
+      }
+    }
+    
+    input[type=submit], button {
+      @include button;
+      border: 1px solid #888;
+      width: inherit;
+    }
+    
+    select {
+      border-radius: 0;
+      font-size: .8em;
+      margin: 0;
+      width: 200px;
+      
+      -webkit-appearance: none;
+    }
+    
+    textarea {
+      height: 6em;
+    }
+  }
+}

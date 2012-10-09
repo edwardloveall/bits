@@ -14,10 +14,11 @@
 
 .item > .meta .author, .author {
   border-radius: 1em;
-  padding: .3em .7em;
+  padding: .3em .8em;
       
   &:hover {
-    color: #444;
+    color: black;
+    background: white;
   }
 }
 
