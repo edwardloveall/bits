@@ -8,7 +8,7 @@ Bits::Application.routes.draw do
   
   resources :items
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
   
   match 'feed' => 'items#index', defaults: { format: 'rss'}, as: :feed
   
