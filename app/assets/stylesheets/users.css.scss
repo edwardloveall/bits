@@ -1,7 +1,10 @@
 .user {
-  border-radius: 1em;
   font-size: 2em;
   margin-bottom: 1em;
+  
+  a {
+    display: inline-block;
+  }
   
   .edit-user {
     display: none;
@@ -13,7 +16,7 @@
 }
 
 .item > .meta .author, .author {
-  border-radius: 1em;
+  border-radius: $base-border-radius;
   padding: .3em .8em;
       
   &:hover {

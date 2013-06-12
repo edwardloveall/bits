@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var height = 744,
       width = 869;
-  $('#bookmarklet a').attr("href", "javascript:url=window.location.href;title=document.title;window.open('"
+  $('a.bookmarklet').attr("href", "javascript:url=window.location.href;title=document.title;window.open('"
   + window.location.protocol + "//"
   + window.location.host +
   "/new?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title)+'&bookmarklet=true','bookmark','width=" + width + 

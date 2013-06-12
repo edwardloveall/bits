@@ -1,9 +1,10 @@
 div#items {
 }
+
 .item {
   background: #ebebeb;
   border: 1px solid darken(#ebebeb, 25%);
-  border-radius: 3px;
+  border-radius: $base-border-radius;
   margin: 0 0 4em;
   
   .item-header,
@@ -27,7 +28,7 @@ div#items {
     line-height: 1.2em;
     
     > a {
-      border-radius: 3px;
+      border-radius: $base-border-radius;
       color: $textColor;
       position: relative;
       
@@ -49,7 +50,7 @@ div#items {
   }
   
   .description {
-    border-radius: 3px;
+    border-radius: $base-border-radius;
     line-height: 1.8em;
     margin-bottom: 1em;
     overflow: auto;
@@ -69,7 +70,7 @@ div#items {
     text-align: left;
     
     a {
-      border-radius: 1em;
+      border-radius: $base-border-radius;
       padding: .3em .8em;
       
       &:hover {
@@ -100,7 +101,7 @@ div#items {
   text-align: center;
   margin-left: 1em;
   background: #333;
-  border-radius: 1em;
+  border-radius: $base-border-radius;
   
   a {
     color: #f5f5f5;
@@ -109,8 +110,8 @@ div#items {
   }
 }
 
-#bookmarklet {
-  border-radius: 4px;
+.bookmarklet-wrap {
+  border-radius: $base-border-radius;
   width: 798px;
   line-height: 1.5em;
   margin-bottom: 1em;
@@ -122,7 +123,7 @@ div#items {
   border: 1px solid #bbb;
   
   > a {
-    border-radius: 4px;
+    border-radius: $base-border-radius;
     padding: .2em .5em;
     background: #323232;
     color: #eee;

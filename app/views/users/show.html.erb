@@ -7,8 +7,8 @@
 <%= paginate @items %>
 
 <% if current_user %>
-<div id="bookmarklet">
-  Drag this to your Bookmarks Bar: <%= link_to 'Post', '' %>
+<div class="bookmarklet-wrap">
+  Drag this to your Bookmarks Bar: <%= link_to 'Post', '', class: "bookmarklet" %>
 </div>
 
 <% end %>

@@ -6,7 +6,7 @@
   a {
     padding: .2em 1.1em;
     border: 1px solid transparent;
-    border-radius: 1em;
+    border-radius: $base-border-radius;
     
     &:hover {
       background: #e2e2e2;

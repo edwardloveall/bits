@@ -27,6 +27,7 @@
     
       <div id="session">
         <% if current_user %>
+          <%= link_to 'Post Bookmarklet', '', class: "bookmarklet" %>
           <%= link_to current_user.name, edit_user_path(current_user) %>
           <%= link_to "Log out", logout_path if current_user %>
         <% else %>
