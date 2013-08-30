@@ -8,12 +8,7 @@ gem 'rails', '3.2.11'
 # gem 'sqlite3'
 # gem 'pg'
 
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
