@@ -5,7 +5,7 @@ xml.rss :version => "2.0" do
     xml.description "Links from #{ @user.name }"
     xml.link user_url
 
-    for item in @user.items
+    for item in @items
       xml.item do
         
         xml.author do |author|

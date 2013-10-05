@@ -5,7 +5,15 @@ class ItemsController < ApplicationController
   respond_to :html, :json, :rss
 
   def index
-    respond_with @items = Item.order("created_at DESC").page(params[:page])
+    respond_to do |format|
+      format.html {
+        @items = Item.order("created_at DESC").page(params[:page])
+      }
+
+      format.rss {
+        @items = Item.order("created_at DESC").limit(50)
+      }
+    end
   end
 
   def show
@@ -20,7 +28,7 @@ class ItemsController < ApplicationController
     @item.title = (defined? params['title']) ? params['title'] : nil
     session[:bookmarklet] = (defined? params['bookmarklet']) ? params['bookmarklet'] : false
     @item.user = current_user
-    
+
     respond_with @item
   end
 
@@ -45,16 +53,16 @@ class ItemsController < ApplicationController
     flash[:notice] = "Item Deleted" if @item.destroy
     respond_with @item
   end
-  
+
   private
-  
+
   def single_item
     @delete_enabled = (params[:action] == 'show' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
   end
-  
+
   def disable_new_link
     # @new_item_endabled = (params[:action] == 'new' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
     @new_item_endabled = false
   end
-  
+
 end
