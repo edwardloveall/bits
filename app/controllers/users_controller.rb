@@ -26,14 +26,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user]) # make a new user from the params passed from #new
-    @user.color_id = params[:user][:color_id]
-    @user.password = params[:user][:password] # the protected attributes
-    @user.password_confirmation = params[:user][:password_confirmation]
-
-    flash.notice = "User Saved" if @user.save #save the user
-
-    respond_with @user
+    @user = User.new(user_params)
+    if @user.save
+      flash.notice = "User Saved"
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def update
@@ -53,7 +52,11 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  protected # protected methods
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :username, :color_id, :password, :password_confirmation)
+  end
 
   def get_user
     @user = User.find(params[:id])

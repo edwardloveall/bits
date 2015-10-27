@@ -37,14 +37,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(params[:item])
+    @item = Item.new(item_parameters)
     flash[:notice] = "Item Saved" if @item.save
     respond_with @item
   end
 
   def update
     @item = Item.find(params[:id])
-    flash[:notice] = "Item Updated" if @item.update_attributes(params[:item])
+    flash[:notice] = "Item Updated" if @item.update_attributes(item_parameters)
     respond_with @item
   end
 
@@ -56,6 +56,10 @@ class ItemsController < ApplicationController
 
   private
 
+  def item_parameters
+    params.require(:item).permit(:description, :title, :url, :user_id)
+  end
+
   def single_item
     @delete_enabled = (params[:action] == 'show' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
   end
@@ -64,5 +68,4 @@ class ItemsController < ApplicationController
     # @new_item_endabled = (params[:action] == 'new' or params[:action] == 'edit') and (params[:controller] == 'items') ? true : false
     @new_item_endabled = false
   end
-
 end
