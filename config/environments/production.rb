@@ -17,4 +17,3 @@ Rails.application.configure do
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.static_cache_control = "public, max-age=#{1.year.to_i}"
 end
-Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
